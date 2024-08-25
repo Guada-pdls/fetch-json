@@ -3,6 +3,11 @@
 
 const DATA_URL = "json/data.json"; // URL que contiene los datos que queremos mostrar
 
+fetch(DATA_URL)
+  .then(data => data.json())
+  .then(data => showData(data.students))
+  .catch(err => console.log(err))
+
 const container = document.getElementById("container"); // "Traemos" utilizando el DOM el div de id "container" para colocar la información en él
 
 /**
